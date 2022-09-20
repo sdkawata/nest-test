@@ -1,13 +1,13 @@
 import { Injectable } from '@nestjs/common';
+import { BoardRepository } from './board.repository';
 
 @Injectable()
 export class IndexUseCase {
-  invoke() {
-    return [
-      {
-        id: 1,
-        name: 'aaaaa',
-      },
-    ];
+  constructor(readonly boardRepository: BoardRepository) {}
+  async invoke() {
+    return (await this.boardRepository.fetchAll()).map((board) => ({
+      id: board.id,
+      name: board.name,
+    }));
   }
 }

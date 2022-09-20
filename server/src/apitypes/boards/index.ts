@@ -1,1 +1,1 @@
-export type IndexResponse = {id: number; name: string}[]
+export type IndexResponse = { id: number; name: string }[];

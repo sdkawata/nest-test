@@ -7,7 +7,7 @@ export class BoardController {
   constructor(private readonly indexUseCase: IndexUseCase) {}
 
   @Get()
-  index(): IndexResponse {
+  async index(): Promise<IndexResponse> {
     return this.indexUseCase.invoke();
   }
 }
