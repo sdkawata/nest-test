@@ -1,3 +1,3 @@
 export class Board {
-  constructor(readonly id: number, readonly name: string) {}
+  constructor(readonly id: number | undefined, readonly name: string) {}
 }
